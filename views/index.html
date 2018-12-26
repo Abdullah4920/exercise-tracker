@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercise Tracker</title>
+  <style>
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+  </style>
+</head>
+<body>
+  <main>
+    <div class="user">
+      <h2>Create a new User</h2>
+      <form class="new-user" method="POST" action="/new-user">
+        <label for="username-input">Enter the username</label>
+        <input id="username-input" type="text" name="username" required>
+        <button type="submit">Add user</button>
+      </form>
+    </div>
+
+    <div class="exercise">
+      <h2>Add an exercise</h2>
+      <form class="new-exercise" action="/new-exercise" method="POST">
+        <label for="user-id">
+          UserID*:
+          <input type="text" name="id" id="user-id" placeholder="userId"
+          required>
+        </label>
+        <label for="description">
+          Description*:
+          <input type="text" name="description" id="description"
+          placeholder="description" required>
+        </label>
+        <label for="duration">
+          Duration (mins)*:
+          <input type="number" name="duration" id="duration" placeholder="duration" required>
+        </label>
+        <label for="date">
+          Date*:
+          <input type="date" name="date" id="date" required>
+        </label>
+        <button type="submit">Add Exercise</button>
+      </form>
+    </div>
+
+    <div class="log">
+      <h2>Fetch exercise log</h2>
+      <form class="log-form" method="POST" action="/log">
+        <label for="userid">
+          UserID*:
+          <input type="text" name="id" id="userid" required>
+        </label>
+        <label for="startTime">
+          Start Date:
+          <input type="date" name="startTime" id="startTime">
+        </label>
+          End Date:
+        <label for="endTime">
+          <input type="date" name="endTime" id="endTime">
+        </label>
+          Maximum entries:
+        <label for="limit">
+          <input type="number" name="limit" id="limit">
+        </label>
+        <button type="submit">Fetch log</button>
+      </form>
+    </div>
+
+    <p>* indicaties compulsory fields</p>
+  </main>
+
+<script></script>
+</body>
+</html>
